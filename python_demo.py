@@ -25,7 +25,7 @@ def get_server_time():
     r = requests.get(
         BASE_URL + "/v3/serverTime",
     )
-    print r.status_code, r.text
+    print(r.status_code, r.text)
     return r.json()
 
 
@@ -33,7 +33,7 @@ def get_ex_info():
     r = requests.get(
         BASE_URL + "/v3/exchangeInfo",
     )
-    print r.status_code, r.text
+    print(r.status_code, r.text)
     return r.json()
 
 
@@ -48,7 +48,7 @@ def get_ticker(pair=None):
         BASE_URL + "/v3/ticker",
         params=payload,
     )
-    print r.status_code, r.text
+    print(r.status_code, r.text)
     return r.json()
 
 
@@ -63,7 +63,7 @@ def get_balance():
         headers={"RST-API-KEY": API_KEY,
                  "MSG-SIGNATURE": generate_signature(payload)}
     )
-    print r.status_code, r.text
+    print(r.status_code, r.text)
     return r.json()
 
 
@@ -87,7 +87,7 @@ def place_order(coin, side, qty, price=None):
         headers={"RST-API-KEY": API_KEY,
                  "MSG-SIGNATURE": generate_signature(payload)}
     )
-    print r.status_code, r.text
+    print(r.status_code, r.text)
 
 
 def cancel_order():
@@ -103,7 +103,7 @@ def cancel_order():
         headers={"RST-API-KEY": API_KEY,
                  "MSG-SIGNATURE": generate_signature(payload)}
     )
-    print r.status_code, r.text
+    print(r.status_code, r.text)
 
 
 def query_order():
@@ -120,7 +120,7 @@ def query_order():
         headers={"RST-API-KEY": API_KEY,
                  "MSG-SIGNATURE": generate_signature(payload)}
     )
-    print r.status_code, r.text
+    print(r.status_code, r.text)
 
 
 def pending_count():
@@ -134,7 +134,7 @@ def pending_count():
         headers={"RST-API-KEY": API_KEY,
                  "MSG-SIGNATURE": generate_signature(payload)}
     )
-    print r.status_code, r.text
+    print(r.status_code, r.text)
     return r.json()
 
 
